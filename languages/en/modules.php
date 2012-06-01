@@ -28,7 +28,6 @@
  * @filesource
  */
 
-$GLOBALS['TL_LANG']['MSC']['mb_richmedia_notfound'] = "Kein RichMedia Inhalt gefunden.";
-$GLOBALS['TL_LANG']['CTE']['mb_richMedia']  = array('Rich Media (z.B. YouTube, Vimeo,…)', 'Rich Media Element wie Youtube, Vimeo, Soundcloud hinzuügen.');
+$GLOBALS['TL_LANG']['MOD']['mb_richMedia']  = array('Rich Media (e.g. YouTube, Vimeo,…)', 'add Rich Media elements like Youtube, Vimeo, Soundcloud.');
 
 ?>

@@ -28,6 +28,6 @@
  * @filesource
  */
 $GLOBALS['TL_LANG']['tl_content']['mb_richmedia_legend'] = 'Rich Media';
-$GLOBALS['TL_LANG']['tl_content']['mb_richmedia'] = array('Rich Media URL', 'Rich Media Element wie Youtube, Vimeo, Soundcloud … hinzufügen.');
+$GLOBALS['TL_LANG']['tl_content']['mb_richmedia'] = array('URL', 'Adresse über die das Rich Media Element erreichbar ist. Das könnte z.B. Youtube, Vimeo, Soundcloud sein.');
 
 ?>

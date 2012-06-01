@@ -28,7 +28,6 @@
  * @filesource
  */
 
-$GLOBALS['TL_LANG']['MOD']['mb_richMedia']  = array('Rich Media', 'Rich Media Elemente wie Youtube, Vimeo, Soundcloud … hinzufügen.');
-
+$GLOBALS['TL_LANG']['MOD']['mb_richMedia']  = array('Rich Media (z.B. YouTube, Vimeo, Soundcloud,…)', 'Rich Media Elemente wie Youtube, Vimeo, Soundcloud … hinzufügen.');
 
 ?>
