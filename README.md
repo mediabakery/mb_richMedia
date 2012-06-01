@@ -9,7 +9,7 @@ The implementations for embedded richMedia elements are kept very simple. If you
 Screenshots
 -----------
 
-![Content Element](http://img6.imagebanana.com/img/gpzc5qnp/thumb/mbrichmedia_youtube.png)
+![Content Element](http://img6.imagebanana.com/img/x8zbehkm/mbrichmedia_youtube.png)
 
 
 System requirements
