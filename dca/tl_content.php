@@ -31,18 +31,24 @@ if(!defined('TL_ROOT'))
  */
 
 $GLOBALS['TL_CSS'][] = 'system/modules/mb_richMedia/html/css/fixpos.css';
-$GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/mb_richMedia/html/js/picker.js';
- 
+if(version_compare(VERSION, '2.10', '<'))
+{
+	$GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/mb_richMedia/html/js/picker_old.js';
+}
+else
+{
+	$GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/mb_richMedia/html/js/picker.js';
+}
 $GLOBALS['TL_DCA']['tl_content']['palettes']['mb_richMedia'] = '{type_legend},type,headline;{mb_richmedia_legend},mb_richmedia;{protected_legend:hide},protected;{expert_legend:hide},guests,invisible,cssID,space';
 
 $GLOBALS['TL_DCA']['tl_content']['fields']['mb_richmedia'] = array(
 	'exclude' => true,
 	'label' => &$GLOBALS['TL_LANG']['tl_content']['mb_richmedia'],
 	'inputType' => 'text',
-	'wizard' => array(array('MbRichMedia','getWizard')),
-	'eval' => array(
-		'tl_class' => 'long wizard fixpos'
-	)
+	'wizard' => array( array(
+			'MbRichMedia',
+			'getWizard'
+		)),
+	'eval' => array('tl_class' => 'long wizard fixpos')
 );
-
 ?>

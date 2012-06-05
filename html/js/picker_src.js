@@ -1,31 +1,44 @@
 window.addEvent('domready', function() {
-	document.id('ctrl_mb_richmedia').addEvent("blur", function() {
-		checkRichMedia(this.value);
-	});
 
-	document.id('ctrl_mb_richmedia').addEvent("focus", function() {
-		document.id('ctrl_mb_richmedia').removeEvent("focus");
-		setTimeout(aftersleep, 2000);
-	});
+	if(document.id('ctrl_appid')) {
+		document.id('ctrl_appid').addEvent("blur", function() {
+			checkFacebookID(this);
+		});
+	};
+	if(document.id('ctrl_targeturl')) {
+		document.id('ctrl_targeturl').addEvent("blur", function() {
+			checkFacebookID(this);
+		});
+	};
+	if(document.id('ctrl_authorurl')) {
+		document.id('ctrl_authorurl').addEvent("blur", function() {
+			checkFacebookID(this);
+		});
+	};
+	function checkFacebookID(inputField) {
 
-	function checkRichMedia(val) {
+		var objData = {
+			'action' : 'mbSocializeGetIcon',
+			'REQUEST_TOKEN' : REQUEST_TOKEN
+		}
+
+		if(inputField.value.length > 0) {
+			objData.url = encodeURI(inputField.value);
+		}
+
 		new Request.Contao({
 			onRequest : AjaxRequest.displayBox('Loading data ...'),
-			onSuccess : function(res) {
+			onSuccess : function(val) {
 				AjaxRequest.hideBox();
 				var el = new Element('span');
-				el.set('html', res)
-				el.getElement('IMG').inject(document.id('pal_mb_richmedia_legend').getElement('IMG'), 'after');
-				document.id('pal_mb_richmedia_legend').getElement('IMG').dispose();
+				el.set('html', val);
+				if (el.getElement('IMG')) {
+					el.getElement('IMG').inject(inputField.getNext(), 'after');
+					inputField.getNext().dispose();
+				}
 			}
-		}).post({
-			'action' : 'mbRichMediaGetIconTag',
-			'url' : encodeURI(val),
-			'REQUEST_TOKEN' : REQUEST_TOKEN
-		});
+		}).post(objData);
+
 	}
 
-	function aftersleep() {
-		checkRichMedia(document.id('ctrl_mb_richmedia').value);
-	}
 });

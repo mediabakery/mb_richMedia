@@ -149,7 +149,10 @@ class MbRichMedia extends Backend
 			if(!$iconTag)
 				$iconTag = $this->defaultIconTag;
 
-			echo json_encode(array('content' => $iconTag));
+			echo json_encode(array('content' => json_encode(array(
+					'iconTag' => $iconTag,
+					'token' => REQUEST_TOKEN
+				))));
 			exit ;
 		}
 	}
