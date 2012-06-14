@@ -1,10 +1,10 @@
 window.addEvent("domready", function () {
-    document.id("ctrl_mb_richmedia").addEvent("blur", function () {
+    if(document.id("ctrl_mb_richmedia")) {document.id("ctrl_mb_richmedia").addEvent("blur", function () {
         checkRichMedia(this.value)
-    });
-    document.id("ctrl_mb_richmedia").addEvent("focus", function () {
+    })};
+    if(document.id("ctrl_mb_richmedia")) {document.id("ctrl_mb_richmedia").addEvent("focus", function () {
         setTimeout(aftersleep, 2000)
-    });
+    })};
 
     function checkRichMedia(val) {
         new Request.Contao({
