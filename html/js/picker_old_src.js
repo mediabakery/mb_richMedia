@@ -13,7 +13,7 @@ window.addEvent("domready", function() {
 				AjaxRequest.hideBox();
 				var objResponse = JSON.decode(res);
 				var el = new Element("span");
-				el.set("html", objResponse.iconTag);
+				el.set("html", unescape(objResponse.iconTag));
 				if(el.getElement("IMG")) {
 					el.getElement("IMG").inject(document.id("pal_mb_richmedia_legend").getElement("IMG"), "after");
 					document.id("pal_mb_richmedia_legend").getElement("IMG").dispose()
